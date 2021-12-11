@@ -18,6 +18,8 @@ dependencies {
 test {
     useTestNG(){
         useDefaultListeners=true
+        String groups = System.properties.get("groups")
+        includeGroups "${groups}"
         suites "src/test/resources/testng.xml"
     }
 }

@@ -3,12 +3,15 @@ package tests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.Reporter;
+
 
 import java.io.IOException;
 
 
 public class TestManager {
     DriverOperations dos;
+    Reporter reporter;
 
     public static TestManager initializeTestManager() {
         TestManager tm = new TestManager();
@@ -28,6 +31,7 @@ public class TestManager {
         }
 
         tm.dos = DriverOperations.initializeDriverOperations(driver);
+        tm.reporter = new Reporter();
         return tm;
 
     }

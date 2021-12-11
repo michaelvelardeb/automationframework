@@ -1,26 +1,22 @@
 package tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.util.List;
 import java.util.Random;
 
 
-public class ExampleTest extends TestMain {
+public class ExampleTest2 extends TestMain {
 
-    @Test(groups={"smoke", "smoke2"})
-    public void exampleTest() {
+    @Test(groups={"smoke", "regression"})
+    public void exampleTest3() {
         tm.dos.navigateToUrl("http://www.google.com");
         Random rd = new Random(); // creating Random object
         boolean status = rd.nextBoolean();
         Assert.assertTrue(status);
     }
 
-    @Test(groups="smoke3")
-    public void exampleTest2() {
+    @Test(groups={"TP-1029", "smoke2"})
+    public void exampleTest4() {
         tm.dos.navigateToUrl("http://www.google.com");
         Random rd = new Random(); // creating Random object
         boolean status = rd.nextBoolean();
