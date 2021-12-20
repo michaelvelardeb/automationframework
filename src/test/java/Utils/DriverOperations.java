@@ -1,4 +1,4 @@
-package tests;
+package Utils;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,9 +10,9 @@ public class DriverOperations {
     WebDriver driver;
 
     public static DriverOperations initializeDriverOperations(WebDriver driver) {
-        DriverOperations dops = new DriverOperations();
-        dops.driver = driver;
-        return dops;
+        DriverOperations d_ops = new DriverOperations();
+        d_ops.driver = driver;
+        return d_ops;
     }
 
     public void navigateToUrl(String url) {

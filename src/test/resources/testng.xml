@@ -3,7 +3,13 @@
 <suite name="Automation_Framework Suite" parallel="classes" thread-count="2">
     <test name="ExampleTests" >
 
-       <classes>
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="" />-->
+<!--            </run>-->
+<!--        </groups>-->
+
+        <classes>
            <class name="tests.ExampleTest"></class>
            <class name="tests.ExampleTest2"></class>
        </classes>
