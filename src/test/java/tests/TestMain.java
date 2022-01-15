@@ -1,6 +1,7 @@
 package tests;
 
 import Utils.TestManager;
+import com.aventstack.extentreports.ExtentReports;
 import org.testng.annotations.*;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
@@ -30,6 +31,4 @@ void closeTestManager() {
         tm.logger.log(Level.INFO, "Test Complete Shutting down driver...............................");
         tm.dos.closeDriver();
     }
-
-
 }
