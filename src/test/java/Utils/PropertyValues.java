@@ -10,14 +10,16 @@ import java.util.logging.Logger;
 
 public class PropertyValues {
     InputStream inputStream;
-    String browser;
+    String BROWSER;
+    String PORT;
+    String SELENIUM_HUB;
 
     public void setBrowser(String browser) {
-        this.browser = browser;
+        this.BROWSER = browser;
     }
 
     public String getBrowser() {
-        return browser;
+        return BROWSER;
     }
 
     public void getPropValues() throws IOException {
@@ -37,7 +39,10 @@ public class PropertyValues {
             Date time = new Date(System.currentTimeMillis());
 
             // get the property value and print it out
-            browser = properties.getProperty("browser");
+            BROWSER = properties.getProperty("BROWSER");
+            PORT = properties.getProperty("PORT");
+            SELENIUM_HUB = String.format(properties.getProperty("SELENIUM_HUB"), PORT);
+
 
         } catch (Exception e) {
             System.out.println("Exception: " + e);
