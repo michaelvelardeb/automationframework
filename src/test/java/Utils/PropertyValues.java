@@ -13,6 +13,7 @@ public class PropertyValues {
     String BROWSER;
     String PORT;
     String SELENIUM_HUB;
+    String PATH_TO_EXTENT_REPORT;
 
     public void setBrowser(String browser) {
         this.BROWSER = browser;
@@ -20,6 +21,10 @@ public class PropertyValues {
 
     public String getBrowser() {
         return BROWSER;
+    }
+
+    public String getPATH_TO_EXTENT_REPORT() {
+        return PATH_TO_EXTENT_REPORT;
     }
 
     public void getPropValues() throws IOException {
@@ -42,6 +47,7 @@ public class PropertyValues {
             BROWSER = properties.getProperty("BROWSER");
             PORT = properties.getProperty("PORT");
             SELENIUM_HUB = String.format(properties.getProperty("SELENIUM_HUB"), PORT);
+            PATH_TO_EXTENT_REPORT = properties.getProperty("PATH_TO_EXTENT_REPORT");
 
 
         } catch (Exception e) {
