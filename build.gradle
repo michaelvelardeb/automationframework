@@ -16,7 +16,8 @@ dependencies {
     // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
     testImplementation 'org.apache.logging.log4j:log4j-core:2.17.0'
     // https://mvnrepository.com/artifact/com.aventstack/extentreports
-    implementation 'com.aventstack:extentreports:5.0.9'
+    implementation 'com.aventstack:extentreports:5.0.5'
+
 
 }
 
