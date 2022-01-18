@@ -61,8 +61,9 @@ FROM openjdk:15.0.2-oracle
 
 #COPY /build/* C:/Users/micha/Desktop/Volume/
 #CMD ["./gradlew test", "-Dgroups="]
+ARG groups
 
 COPY . .
-CMD ./gradlew test -Dgroups=
+CMD ./gradlew test -Dgroups=$groups
 
 #CMD java -version
