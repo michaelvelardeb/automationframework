@@ -45,7 +45,10 @@ pipeline {
     }
       stage('Close Docker') {
           steps {
-              sh "echo Building Automation Project"
+//              sh "echo Building Automation Project"
+              script {
+                  echo 'Stage 1'
+              }
           }
       }
 
