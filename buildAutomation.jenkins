@@ -6,11 +6,12 @@ pipeline {
   // to the BR Synology fileserver. Agents in AWS must copy files
   // via the AWS private VPN link to the Synology.
   //
-  agent
-          dockerfile {
-              filename 'Dockerfile'
+  agent {
+      dockerfile {
+          filename 'Dockerfile'
 //              label 'Darwin'
-          }
+      }
+  }
 
   stages {
     stage('SCM Checkout') {
