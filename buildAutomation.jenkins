@@ -36,6 +36,7 @@ pipeline {
     stage('Build Automation') {
 
         steps {
+                echo Building Automation Project
                 sh "echo Building Automation Project"
                 sh('echo Building Automation Project')
                 sh('docker compose up -d')
@@ -45,6 +46,7 @@ pipeline {
       stage('Close Docker') {
 
           steps {
+              echo Closing conatainers
               sh "echo closing conatainers"
               sh('echo closing conatainers')
               sh('docker compose down')
