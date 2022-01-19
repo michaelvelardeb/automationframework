@@ -40,7 +40,7 @@ pipeline {
 //            run docker compose up -d
             script {
                 echo 'Stage 1'
-                docker compose up -d
+                echo 'Build Automation'
             }
             script {
                 docker images
