@@ -36,8 +36,11 @@ pipeline {
     stage('Build Automation') {
 
         steps {
-            echo 'Building Automation Project'
-            docker compose up -d
+//            echo 'Building Automation Project'
+//            run docker compose up -d
+            script {
+                echo 'Stage 1'
+            }
         }
     }
       stage('Close Docker') {
