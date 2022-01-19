@@ -41,6 +41,7 @@ pipeline {
             script {
                 echo 'Stage 1'
                 echo 'Build Automation'
+                sudo docker compose up -d
             }
             script {
                 docker images
