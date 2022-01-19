@@ -37,6 +37,7 @@ pipeline {
 
         steps {
             sh('docker compose up -d')
+            echo 'docker up'
 //                sh "echo Building Automation Project"
 //                sh('echo Building Automation Project')
 //                sh('docker compose up -d')
