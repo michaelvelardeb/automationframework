@@ -6,8 +6,8 @@ pipeline {
   // to the BR Synology fileserver. Agents in AWS must copy files
   // via the AWS private VPN link to the Synology.
   //
-  agent {
-      any
+  agent any {
+
 //          dockerfile {
 //              filename 'Dockerfile'
 //              label 'Darwin'
