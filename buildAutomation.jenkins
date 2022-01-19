@@ -46,6 +46,7 @@ pipeline {
       stage('Close Docker') {
 
           steps {
+
               echo Closing conatainers
               sh "echo closing conatainers"
               sh('echo closing conatainers')
