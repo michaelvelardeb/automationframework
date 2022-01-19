@@ -57,10 +57,10 @@ services:
 #      - "4443:4443"
 #      - "4444:4444"
   automation_tests_compose:
-    image: automation_framework_4444:latest
+    image: mvelarde/automation_framework:latest
 #    environment:
 #      - "arg1=${arg1}"
-    command: ./gradlew test -Dgroups=$${arg1}
+    command: ./gradlew test -Dgroups=
 #    build:
     networks:
       automation_network:

@@ -1,0 +1,63 @@
+#!/usr/bin/env groovy
+
+pipeline {
+  //
+  // Use macOS agents as they are on-site and have much faster access
+  // to the BR Synology fileserver. Agents in AWS must copy files
+  // via the AWS private VPN link to the Synology.
+  //
+  agent {
+
+        dockerfile {
+            filename 'Dockerfile'
+            label 'Darwin'
+            }
+        }
+  stages {
+    stage('SCM Checkout') {
+      steps {
+        checkout([
+          $class: 'GitSCM',
+          branches: [[name: '/dev']],
+          extensions: [
+            [ $class: 'CleanBeforeCheckout',
+              deleteUntrackedNestedRepositories: true ],
+            [ $class: 'CloneOption',
+              depth: 1,
+              shallow: true ]
+          ],
+//          userRemoteConfigs: [
+//            [ credentialsId: 'alcon-deploy_key',
+//              url: 'git@github.com:BottleRocketStudios/alcon_automation.git' ]
+//          ]
+        ])
+      }
+    }
+    stage('Build Automation') {
+
+        steps {
+                sh('echo Building Automation Project')
+            sh('docker compose up -d')
+               // sh('./gradlew test')
+        }
+    }
+      stage('Close Docker') {
+
+          steps {
+              sh('echo closing conatainers')
+              sh('docker compose down')
+              // sh('./gradlew test')
+          }
+      }
+
+    // stage('Sync to Synology') {
+    //   steps {
+    //     sh """
+    //       TARGET_DIRECTORY="${env.BUILD_ARTIFACTS_PATH}/automation/github/alcon"
+    //       test -d \${TARGET_DIRECTORY} || mkdir -p \${TARGET_DIRECTORY}
+    //       rsync -av --delete --include '.git/config' --exclude '.git/*' . \${TARGET_DIRECTORY}
+    //     """
+    //   }
+    // }
+  }
+}
