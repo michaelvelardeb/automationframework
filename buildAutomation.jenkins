@@ -7,7 +7,7 @@ pipeline {
   // via the AWS private VPN link to the Synology.
   //
   agent
-        docker { image 'ubuntu:latest'}
+        docker { image 'node:16.13.1-alpine'}
 //          dockerfile {
 //              filename 'Dockerfile'
 //              label 'Darwin'
