@@ -8,7 +8,7 @@ pipeline {
   //
   agent {
       dockerfile {
-          filename 'docker-compose'
+          filename 'docker-compose.yml'
 //              label 'Darwin'
       }
   }
