@@ -7,12 +7,11 @@ pipeline {
   // via the AWS private VPN link to the Synology.
   //
   agent {
-
-        dockerfile {
-            filename 'Dockerfile'
-            label 'Darwin'
-            }
-        }
+          dockerfile {
+              filename 'Dockerfile'
+              label 'Darwin'
+          }
+  }
   stages {
     stage('SCM Checkout') {
       steps {
