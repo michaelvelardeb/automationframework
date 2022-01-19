@@ -40,6 +40,8 @@ pipeline {
 //            run docker compose up -d
             script {
                 echo 'Stage 1'
+            }
+            script {
                 docker images
             }
         }
