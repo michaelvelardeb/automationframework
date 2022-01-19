@@ -42,7 +42,7 @@ pipeline {
             script {
                 echo 'Stage 1'
                 echo 'Build Automation'
-                docker version
+                sh('docker version')
                 docker compose up -d
                 echo 'docker compose is up'
             }
