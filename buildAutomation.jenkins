@@ -36,6 +36,7 @@ pipeline {
     stage('Build Automation') {
 
         steps {
+            echo 'Building Automation'
                 echo Building Automation Project
                 sh "echo Building Automation Project"
                 sh('echo Building Automation Project')
@@ -46,12 +47,6 @@ pipeline {
       stage('Close Docker') {
 
           steps {
-
-              echo Closing conatainers
-              sh "echo closing conatainers"
-              sh('echo closing conatainers')
-              sh('docker compose down')
-              // sh('./gradlew test')
           }
       }
 
